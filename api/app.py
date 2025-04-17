@@ -3,9 +3,8 @@ from datetime import datetime
 
 app = Flask(__name__)
 
-# Simulasi nilai kelembapan (bisa diganti dari sensor IoT asli nanti)
 current_moisture = {
-    "moisture": 45.6,  # dalam persen
+    "moisture": 0,
     "timestamp": datetime.now().isoformat()
 }
 
@@ -24,4 +23,4 @@ def update_moisture():
     return jsonify({'message': 'Kelembapan berhasil diperbarui', 'data': current_moisture}), 200
 
 if __name__ == '__main__':
-    app.run(debug=True)
+    app.run(debug=False)
